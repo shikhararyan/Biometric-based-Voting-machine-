@@ -5,7 +5,7 @@ from pyfingerprint.pyfingerprint import PyFingerprint
 def verify_fingerprint(aadhar_number):
     try:
         # Initialize the fingerprint scanner
-        f = PyFingerprint('COM2', 57600, 0xFFFFFFFF, 0x00000000)
+        f = PyFingerprint('Port_#0001.Hub_#0001', 57600, 0xFFFFFFFF, 0x00000000)
 
         # Check if the fingerprint sensor is connected and accessible
         if not f.verifyPassword():
@@ -38,9 +38,4 @@ def verify_fingerprint(aadhar_number):
         print('An error occurred while verifying the fingerprint:', str(e))
         return False
 
-def get_fingerprint_template_id(aadhar_number):
-    # Replace with your code to retrieve the fingerprint template ID from the database
-    # based on the given Aadhar number
-    # You need to establish a connection to your database and execute the appropriate query
-    # Return the fingerprint template ID if found, or None if not found
-    pass
+verify_fingerprint("1224")

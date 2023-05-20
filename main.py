@@ -33,7 +33,9 @@ def verify_aadhar():
                 messagebox.showinfo("Vote Status", "Vote already casted.")
             else:
                 messagebox.showinfo("Vote Status", "Voter ID exists. Calling finger.py module...")
-                # Call your finger.py module or function here
+                import finger
+    # Call the necessary function from the finger.py module here
+
 
         else:
             messagebox.showinfo("Vote Status", "Voter ID does not exist.")
