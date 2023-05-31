@@ -28,7 +28,7 @@ def getFP(folder_path,file_name):
         image = Image.open(stream)
 
         # Save the image to a file
-        image.save("{0}/{1}.bmp".format(folder_path,file_name))
+        image.save("{0}\\{1}.bmp".format("C:\\Users\\shikh\\OneDrive\\Desktop\\hiluuu\\" + folder_path, file_name))
 
     except requests.exceptions.RequestException as e:
         print("Error:", e)

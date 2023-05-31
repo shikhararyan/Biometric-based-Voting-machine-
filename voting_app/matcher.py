@@ -1,16 +1,16 @@
 import os
 import cv2
 
-def matchFP(folder_path,file):
-    sample = cv2.imread(file)
+def matchFP(folder_path,Sfile):
+    sample = cv2.imread("C:\\Users\\shikh\\OneDrive\\Desktop\\hiluuu\\voting_app"+ folder_path + "\\" + Sfile)
     best_score = 0
     filename= None 
     image = None
     kp1, kp2, mp = None,None,None
-    for file in [file for file in os.listdir(folder_path)][:44]:
+    for file in [file for file in os.listdir("C:\\Users\\shikh\\OneDrive\\Desktop\\hiluuu\\voting_app"+ folder_path)][:44]:
         if file == 'secure_vote.bmp':
             continue
-        fingerprint_image = cv2.imread(folder_path + "/" + file)
+        fingerprint_image = cv2.imread("C:\\Users\\shikh\\OneDrive\\Desktop\\hiluuu\\" + folder_path + "\\" + file)
         sift = cv2.SIFT_create()
         keypoints_1, descriptors_1 = sift.detectAndCompute(sample,None)
         keypoints_2, descriptors_2 = sift.detectAndCompute(fingerprint_image,None)
